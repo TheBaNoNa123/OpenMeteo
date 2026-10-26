@@ -40,4 +40,4 @@ def fetch_data(lat, long, start, end):
 
 fetch_data(latitude, longitude, start_date, end_date)
 
-logging.info("Program finished")
+logging.info("Program finished\n")
