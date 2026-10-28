@@ -10,5 +10,6 @@ def append_csv(path, lat, long, dates, temperature, time, time_zone):
                                                   "Time_Zone", "Date", "Time", "Temperature"])
         if os.path.getsize(file_path) == 0:
             writer.writeheader()
+
         writer.writerows([{"Latitude": lat, "Longitude": long, "Time_Zone": time_zone, "Date" : dates, "Time": time, "Temperature": temperature}])
 

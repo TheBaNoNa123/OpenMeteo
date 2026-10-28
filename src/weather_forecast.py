@@ -29,7 +29,6 @@ end_date = input()
 print("Enter path: ")
 path = input()
 
-
 def fetch_data(lat, long, start, end):
     try:
         data = requests.get(url, params={"latitude": lat, "longitude": long,
