@@ -1,4 +1,3 @@
-import time
 from datetime import datetime, timedelta
 import requests
 import logging
@@ -13,23 +12,9 @@ logging.basicConfig(
 
 logging.info("Program started")
 
-url  = "https://api.open-meteo.com/v1/forecast"
-print("Enter latitude: ")
-latitude = float(input())
+url = "https://api.open-meteo.com/v1/forecast"
 
-print("Enter longitude: ")
-longitude = float(input())
-
-print("Enter start date (YYYY-MM-DD): ")
-start_date = input()
-
-print("Enter end date (YYYY-MM-DD): ")
-end_date = input()
-
-print("Enter path: ")
-path = input()
-
-def fetch_data(lat, long, start, end):
+def fetch_data(lat, long, start, end, path):
     try:
         data = requests.get(url, params={"latitude": lat, "longitude": long,
                                         "hourly": "temperature_2m", "start_date": start,
@@ -62,7 +47,6 @@ def fetch_data(lat, long, start, end):
     except requests.exceptions.RequestException as e:
         logging.error(e)
 
-fetch_data(latitude, longitude, start_date, end_date)
 
 logging.info("Program finished\n")
 
