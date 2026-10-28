@@ -11,4 +11,3 @@ def parse_dates(start_date, end_date):
     return dates
 
 
-parse_dates("2026-10-20", "2026-10-25")
