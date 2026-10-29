@@ -1,5 +1,4 @@
-import time
-from datetime import datetime, date, timedelta
+from datetime import date, timedelta
 
 def parse_dates(start_date, end_date):
     start = date.fromisoformat(start_date)
@@ -9,5 +8,4 @@ def parse_dates(start_date, end_date):
     for i in range((end - start).days + 1):
         dates.append((start + timedelta(days=i)).isoformat())
     return dates
-
 
